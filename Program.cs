@@ -15,7 +15,7 @@ namespace Lab_5
         {
             
             ObservableList1<char> L1 = new Lab_5.ObservableList1<char>();
-            
+            L1.OnNewItemAdded += L1_OnNewItemAdded;
             L1.Ob1Add('a');
             L1.Ob1Add('x');
             L1.Ob1Add('b');
@@ -23,19 +23,21 @@ namespace Lab_5
             L1.Ob1Add('d');
             L1.Ob1Set('z', 1);
             L1.Ob1RemoveAt(2);
+            
             for (int i = 0; i < L1.Length; i++)
             {
-                Console.WriteLine(L1.Ob1Get(i));
+                Console.WriteLine(L1.Ob1Get(i));    
             }
             
+            
         }
-        static void NewItemAddedHandle(object sender, EventArgs e)
+
+       
+
+        private static void L1_OnNewItemAdded(object sender, EventArgs e)
         {
-            Console.WriteLine($"New value {e} added from{sender.ToString()}");
-        }
-        public static void Cwres<T>(T inp)
-        {
-            Console.WriteLine(inp.ToString());
+            Console.WriteLine($"Dodano element {e.ToString()}");
         }
     }
+    
 }
