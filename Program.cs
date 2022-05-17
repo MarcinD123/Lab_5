@@ -25,6 +25,8 @@ namespace Lab_5
             L1.Ob1RemoveAt(2);
             L1.OnNewItemAdded -= L1_OnNewItemAdded;
             L1.Ob1Add('k');
+            L1.OnNewItemAdded += L1_OnNewItemAdded;
+            L1.Ob1Add('b');
             for (int i = 0; i < L1.Length; i++)
             {
                 Console.WriteLine(L1.Ob1Get(i));    
@@ -44,7 +46,9 @@ namespace Lab_5
         }
         private static void L1_OnNewItemAdded(object sender, EventArgs e)//1
         {
-            Console.WriteLine("New item"+e);
+            
+            Console.WriteLine("New item!");
+            
         }
         static void Receive(object i) //2
         {
