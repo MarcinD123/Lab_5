@@ -45,9 +45,10 @@ namespace Lab_5
         public void Ob1Add(T item)
         {     
             ObList1.Add(item);
-            
-            
-            OnNewItemAdded?.Invoke(this,EventArgs.Empty);
+            //
+            /////
+            EventArgs evarg = new EventArgs();
+            OnNewItemAdded?.Invoke(this,evarg);
             //OnItemAdded?.Invoke(this, EventArgs.Empty);           
         }
         
