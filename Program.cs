@@ -13,7 +13,7 @@ namespace Lab_5
         
         static void Main(string[] args)
         {
-            
+            /////////////////////////////////////////////////////////////// 1
             ObservableList1<char> L1 = new Lab_5.ObservableList1<char>();
             L1.OnNewItemAdded += L1_OnNewItemAdded;
             L1.Ob1Add('a');
@@ -26,18 +26,31 @@ namespace Lab_5
             
             for (int i = 0; i < L1.Length; i++)
             {
-                Console.WriteLine(L1.Ob1Get(i));    
+                Console.WriteLine(L1.Ob1Get(i/2));    
             }
-            
-            
+            //////////////////////////////////////////////////////////////// 2
+            Console.WriteLine();
+            Console.WriteLine("L2:");
+            ObservableList2<string> L2 = new ObservableList2<string>();
+            L2.Ob2Add("xd",Receive);
+            L2.Ob2Add("asd",Receive);
+            L2.Ob2Add("Wtc",Receive);
+
+
+            Console.WriteLine(L2.Ob2Get(1));
+            ////////////////////////////////////////////////////////////////////////////////////
+
         }
-
-       
-
-        private static void L1_OnNewItemAdded(object sender, EventArgs e)
+        private static void L1_OnNewItemAdded(object sender, EventArgs e)//1
         {
-            Console.WriteLine($"Dodano element {e.ToString()}");
+            Console.WriteLine("New item");
         }
+        static void Receive(object i) //2
+        {
+            Console.WriteLine("Added: "+i);
+        }
+
+
     }
     
 }

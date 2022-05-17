@@ -25,7 +25,7 @@ namespace Lab_5
         public void ItemAdded(object src, EventArgs e)
         {
 
-            Console.WriteLine("dodano");
+            //Console.WriteLine("dodano");
         }
 
         
