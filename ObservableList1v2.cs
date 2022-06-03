@@ -56,21 +56,11 @@ namespace Lab_5
         }
         public void Ob1v2Remove(int index) => ObList1v2.RemoveAt(index);
 
-        //public void Ob1RemoveAt(int index)
-        //{
-        //    ObList1v2.RemoveAt(index);
-        //}
+        
         public T Ob1v2Get(int index) => (ObList1v2[index]);
-        //public T Ob1Get(int index)
-        //{
-        //    return ObList1v2[index];
-        //}
+        
         public void Ob1v2Set(T value, int index) => ObList1v2[index] = value;
-        //public void Ob1Set(T value, int index)
-        //{
-        //    ObList1v2[index] = value;
-        //}
-        // public event EventHandler<string> Addedevent
+        
 
 
     }

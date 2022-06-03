@@ -10,24 +10,17 @@ namespace Lab_5
 
     class ObservableList1<T>
     {
-        public event EventHandler OnNewItemAdded;
+        public EventHandler onItemAdded;
+
+
+        //public event EventHandler OnNewItemAdded;
         public ObservableList1()
         {
-            OnNewItemAdded += ItemAdded;
+            //onItemAdded += newItemAdded;
         }
-        
 
-       // ListAdded<T> delegat = Program.Cwres<T>;
-        //public delegate void ItemAddedEventHandler<T>(object src, EventArgs args);
-        //ListAdded LAD = new ListAdded();
         private List<T> ObList1 = new List<T>();
         
-        public void ItemAdded(object src, EventArgs e)
-        {
-
-            //Console.WriteLine("dodano");
-        }
-
         
 
         public int Length
@@ -45,10 +38,10 @@ namespace Lab_5
         public void Ob1Add(T item)
         {     
             ObList1.Add(item);
-            //
-            /////
-            EventArgs evarg = new EventArgs();
-            OnNewItemAdded?.Invoke(this,evarg);
+            //onItemAdded(this,EventArgs.Empty);
+            onItemAdded?.Invoke(this,EventArgs.Empty);
+           // EventArgs evarg = new EventArgs();
+           // OnNewItemAdded?.Invoke(this,evarg);
             //OnItemAdded?.Invoke(this, EventArgs.Empty);           
         }
         
@@ -66,6 +59,10 @@ namespace Lab_5
         }
         // public event EventHandler<string> Addedevent
 
+        //private void newItemAdded( object sender, EventArgs e)
+        //{
+        //    Console.WriteLine(sender.ToString());
+        //}
         
 
     }
